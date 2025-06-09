@@ -99,9 +99,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => RegisterPageWidget(),
         ),
         FFRoute(
+          name: BioinformationWidget.routeName,
+          path: BioinformationWidget.routePath,
+          builder: (context, params) => BioinformationWidget(),
+        ),
+        FFRoute(
+          name: TestWidget.routeName,
+          path: TestWidget.routePath,
+          builder: (context, params) => TestWidget(),
+        ),
+        FFRoute(
           name: LandingPageWidget.routeName,
           path: LandingPageWidget.routePath,
           builder: (context, params) => LandingPageWidget(),
+        ),
+        FFRoute(
+          name: UserCustomization1Widget.routeName,
+          path: UserCustomization1Widget.routePath,
+          builder: (context, params) => UserCustomization1Widget(),
+        ),
+        FFRoute(
+          name: UserCustomization2Widget.routeName,
+          path: UserCustomization2Widget.routePath,
+          builder: (context, params) => UserCustomization2Widget(),
+        ),
+        FFRoute(
+          name: UserHistoryWidget.routeName,
+          path: UserHistoryWidget.routePath,
+          builder: (context, params) => UserHistoryWidget(),
         ),
         FFRoute(
           name: UserSettingsWidget.routeName,
@@ -112,31 +137,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: UserProfileWidget.routeName,
           path: UserProfileWidget.routePath,
           builder: (context, params) => UserProfileWidget(),
-        ),
-        FFRoute(
-          name: UserCustomization1Widget.routeName,
-          path: UserCustomization1Widget.routePath,
-          builder: (context, params) => UserCustomization1Widget(),
-        ),
-        FFRoute(
-          name: UserHistoryWidget.routeName,
-          path: UserHistoryWidget.routePath,
-          builder: (context, params) => UserHistoryWidget(),
-        ),
-        FFRoute(
-          name: UserCustomization2Widget.routeName,
-          path: UserCustomization2Widget.routePath,
-          builder: (context, params) => UserCustomization2Widget(),
-        ),
-        FFRoute(
-          name: TestWidget.routeName,
-          path: TestWidget.routePath,
-          builder: (context, params) => TestWidget(),
-        ),
-        FFRoute(
-          name: BioinformationWidget.routeName,
-          path: BioinformationWidget.routePath,
-          builder: (context, params) => BioinformationWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
