@@ -60,7 +60,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFEDF1F6),
         body: SafeArea(
           top: true,
           child: Column(
@@ -80,7 +80,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    width: 250.0,
+                    width: 270.0,
                     child: TextFormField(
                       controller: _model.usernameTextController,
                       focusNode: _model.usernameFocusNode,
@@ -182,7 +182,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                     ),
                   ),
                   Container(
-                    width: 250.0,
+                    width: 270.0,
                     child: TextFormField(
                       controller: _model.emailTextController,
                       focusNode: _model.emailFocusNode,
@@ -285,7 +285,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                     ),
                   ),
                   Container(
-                    width: 250.0,
+                    width: 270.0,
                     child: TextFormField(
                       controller: _model.passwordTextController,
                       focusNode: _model.passwordFocusNode,
@@ -401,7 +401,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                     ),
                   ),
                   Container(
-                    width: 250.0,
+                    width: 270.0,
                     child: TextFormField(
                       controller: _model.confirmPasswordTextController,
                       focusNode: _model.confirmPasswordFocusNode,
@@ -516,7 +516,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                           .asValidator(context),
                     ),
                   ),
-                ].divide(SizedBox(height: 25.0)),
+                ].divide(SizedBox(height: 30.0)),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
@@ -549,8 +549,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                       'created_at':
                           supaSerialize<DateTime>(getCurrentTimestamp),
                       'email': _model.emailTextController.text,
-                      'username': (_model.usernameFocusNode?.hasFocus ?? false)
-                          .toString(),
+                      'username': _model.usernameTextController.text,
                     });
 
                     context.pushNamedAuth(
@@ -573,26 +572,20 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: Color(0xFF84D2F6),
-                    textStyle:
-                        FlutterFlowTheme.of(context).titleMedium.override(
-                              font: GoogleFonts.interTight(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontStyle,
-                              ),
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .fontStyle,
-                            ),
-                    elevation: 2.0,
+                    textStyle: FlutterFlowTheme.of(context).titleLarge.override(
+                          font: GoogleFonts.urbanist(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .fontStyle,
+                          ),
+                          fontSize: 18.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.bold,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                        ),
+                    borderRadius: BorderRadius.circular(24.0),
                   ),
                 ),
               ),
@@ -601,6 +594,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       'Already have an account?',
@@ -639,7 +633,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: Color(0xFF334EAC),
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                               fontStyle: FlutterFlowTheme.of(context)

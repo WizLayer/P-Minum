@@ -56,7 +56,7 @@ class BioinformationModel extends FlutterFlowModel<BioinformationWidget> {
   TextEditingController? dailyActivityDescTextController;
   String? Function(BuildContext, String?)?
       dailyActivityDescTextControllerValidator;
-  // Stores action output result for [Backend Call - API (prediction)] action in dailyActivityDesc widget.
+  // Stores action output result for [Backend Call - API (prediction)] action in Button widget.
   ApiCallResponse? apiResultris;
 
   @override

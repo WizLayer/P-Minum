@@ -5,6 +5,6 @@ export '../supabase.dart';
 export 'row.dart';
 export 'table.dart';
 
-export 'tables/water_intake_history.dart';
+export 'tables/user_intake_history.dart';
 export 'tables/users.dart';
 export 'tables/health_complication.dart';

@@ -28,6 +28,6 @@ class HealthComplicationRow extends SupabaseDataRow {
   set complicationID(String value) =>
       setField<String>('complication_ID', value);
 
-  String? get userID => getField<String>('user_ID');
-  set userID(String? value) => setField<String>('user_ID', value);
+  String get userID => getField<String>('user_ID')!;
+  set userID(String value) => setField<String>('user_ID', value);
 }

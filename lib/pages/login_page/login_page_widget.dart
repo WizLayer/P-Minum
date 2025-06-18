@@ -53,7 +53,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Color(0xFFEDF1F6),
         body: SafeArea(
           top: true,
           child: Column(
@@ -73,7 +73,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    width: 250.0,
+                    width: 270.0,
                     child: TextFormField(
                       controller: _model.emailTextController,
                       focusNode: _model.emailFocusNode,
@@ -175,7 +175,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     ),
                   ),
                   Container(
-                    width: 250.0,
+                    width: 270.0,
                     child: TextFormField(
                       controller: _model.passwordTextController,
                       focusNode: _model.passwordFocusNode,
@@ -289,7 +289,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           .asValidator(context),
                     ),
                   ),
-                ].divide(SizedBox(height: 25.0)),
+                ].divide(SizedBox(height: 30.0)),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
@@ -309,7 +309,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     context.pushNamedAuth(
                         HomePageWidget.routeName, context.mounted);
                   },
-                  text: 'Log In',
+                  text: 'Login',
                   options: FFButtonOptions(
                     width: 300.0,
                     height: 50.0,
@@ -317,26 +317,20 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: Color(0xFF84D2F6),
-                    textStyle:
-                        FlutterFlowTheme.of(context).titleMedium.override(
-                              font: GoogleFonts.interTight(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontStyle,
-                              ),
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .fontStyle,
-                            ),
-                    elevation: 2.0,
+                    textStyle: FlutterFlowTheme.of(context).titleLarge.override(
+                          font: GoogleFonts.urbanist(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .fontStyle,
+                          ),
+                          fontSize: 18.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.bold,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                        ),
+                    borderRadius: BorderRadius.circular(24.0),
                   ),
                 ),
               ),
@@ -383,7 +377,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     .bodyMedium
                                     .fontStyle,
                               ),
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: Color(0xFF334EAC),
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                               fontStyle: FlutterFlowTheme.of(context)

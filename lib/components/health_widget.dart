@@ -246,6 +246,7 @@ class _HealthWidgetState extends State<HealthWidget> {
           tapBodyToCollapse: false,
           headerAlignment: ExpandablePanelHeaderAlignment.center,
           hasIcon: true,
+          iconColor: FlutterFlowTheme.of(context).primaryText,
         ),
       ),
     );
