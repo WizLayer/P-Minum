@@ -8,6 +8,7 @@ import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -79,34 +80,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : RegisterPageWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : LandingPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? HomePageWidget()
-              : RegisterPageWidget(),
-        ),
-        FFRoute(
-          name: LoginPageWidget.routeName,
-          path: LoginPageWidget.routePath,
-          builder: (context, params) => LoginPageWidget(),
-        ),
-        FFRoute(
-          name: RegisterPageWidget.routeName,
-          path: RegisterPageWidget.routePath,
-          builder: (context, params) => RegisterPageWidget(),
-        ),
-        FFRoute(
-          name: BioinformationWidget.routeName,
-          path: BioinformationWidget.routePath,
-          builder: (context, params) => BioinformationWidget(),
-        ),
-        FFRoute(
-          name: TestWidget.routeName,
-          path: TestWidget.routePath,
-          builder: (context, params) => TestWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? NavBarPage() : LandingPageWidget(),
         ),
         FFRoute(
           name: LandingPageWidget.routeName,
@@ -114,34 +94,43 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LandingPageWidget(),
         ),
         FFRoute(
-          name: UserCustomization1Widget.routeName,
-          path: UserCustomization1Widget.routePath,
-          builder: (context, params) => UserCustomization1Widget(),
+          name: BioinformationWidget.routeName,
+          path: BioinformationWidget.routePath,
+          builder: (context, params) => BioinformationWidget(),
         ),
         FFRoute(
-          name: UserCustomization2Widget.routeName,
-          path: UserCustomization2Widget.routePath,
-          builder: (context, params) => UserCustomization2Widget(),
-        ),
-        FFRoute(
-          name: UserHistoryWidget.routeName,
-          path: UserHistoryWidget.routePath,
-          builder: (context, params) => UserHistoryWidget(),
-        ),
-        FFRoute(
-          name: UserSettingsWidget.routeName,
-          path: UserSettingsWidget.routePath,
-          builder: (context, params) => UserSettingsWidget(),
-        ),
-        FFRoute(
-          name: UserProfileWidget.routeName,
-          path: UserProfileWidget.routePath,
-          builder: (context, params) => UserProfileWidget(),
+          name: RegisterPageWidget.routeName,
+          path: RegisterPageWidget.routePath,
+          builder: (context, params) => RegisterPageWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
           path: HomePageWidget.routePath,
-          builder: (context, params) => HomePageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'HomePage')
+              : HomePageWidget(),
+        ),
+        FFRoute(
+          name: LoginPageWidget.routeName,
+          path: LoginPageWidget.routePath,
+          builder: (context, params) => LoginPageWidget(),
+        ),
+        FFRoute(
+          name: UserProfileWidget.routeName,
+          path: UserProfileWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'UserProfile')
+              : UserProfileWidget(),
+        ),
+        FFRoute(
+          name: EditUserProfileWidget.routeName,
+          path: EditUserProfileWidget.routePath,
+          builder: (context, params) => EditUserProfileWidget(),
+        ),
+        FFRoute(
+          name: EditProPicWidget.routeName,
+          path: EditProPicWidget.routePath,
+          builder: (context, params) => EditProPicWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -312,7 +301,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/registerPage';
+            return '/landingPage';
           }
           return null;
         },

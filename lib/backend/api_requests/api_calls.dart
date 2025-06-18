@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
-import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -33,39 +32,6 @@ class PredictionCall {
       alwaysAllowBody: false,
     );
   }
-}
-
-class MLModelCall {
-  static Future<ApiCallResponse> call({
-    String? text = '',
-  }) async {
-    final ffApiRequestBody = '''
-{
-  "text": "${escapeStringForJson(text)}"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'MLModel',
-      apiUrl: 'https://render-flask-deployement-hy6n.onrender.com/predict',
-      callType: ApiCallType.POST,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-
-  static dynamic prediction(dynamic response) => getJsonField(
-        response,
-        r'''$''',
-      );
 }
 
 class ApiPagingParams {

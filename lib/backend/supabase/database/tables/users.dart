@@ -50,4 +50,19 @@ class UsersRow extends SupabaseDataRow {
   double? get dailyWaterIntake => getField<double>('dailyWaterIntake');
   set dailyWaterIntake(double? value) =>
       setField<double>('dailyWaterIntake', value);
+
+  String? get userProfile => getField<String>('userProfile');
+  set userProfile(String? value) => setField<String>('userProfile', value);
+
+  DateTime? get lastLogged => getField<DateTime>('lastLogged');
+  set lastLogged(DateTime? value) => setField<DateTime>('lastLogged', value);
+
+  bool? get diabetes => getField<bool>('diabetes');
+  set diabetes(bool? value) => setField<bool>('diabetes', value);
+
+  bool? get pregnant => getField<bool>('pregnant');
+  set pregnant(bool? value) => setField<bool>('pregnant', value);
+
+  bool? get breastFeeding => getField<bool>('breastFeeding');
+  set breastFeeding(bool? value) => setField<bool>('breastFeeding', value);
 }
